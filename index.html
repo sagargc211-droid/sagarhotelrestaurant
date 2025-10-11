@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sagar Hotel & Restaurant — Home</title>
+    <meta
+      name="description"
+      content="Sagar Hotel & Restaurant — cozy rooms, authentic Nepali cuisine, warm hospitality."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --accent: #c98b59;
+        --muted: #6b7280;
+        --bg: #fbfbfb;
+        --card: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, Arial;
+        background: var(--bg);
+        color: #0f1724;
+        line-height: 1.6;
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 28px;
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo {
+        width: 56px;
+        height: 56px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(180deg, #fff, #f5efe8);
+        border: 1px solid #efe6db;
+        font-family: "Playfair Display";
+        font-weight: 700;
+      }
+
+      nav {
+        display: flex;
+        gap: 16px;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .btn {
+        background: var(--accent);
+        color: white;
+        padding: 10px 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      /* Hero Section */
+      .hero {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        margin-top: 18px;
+      }
+
+      .hero-left {
+        flex: 1;
+        background: var(--card);
+        padding: 22px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display";
+        margin: 0 0 8px;
+        font-size: 32px;
+      }
+
+      .lead {
+        color: var(--muted);
+      }
+
+      .hero-right {
+        width: 320px;
+      }
+
+      /* Cards */
+      .card {
+        background: var(--card);
+        padding: 16px;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04);
+      }
+
+      /* Chips & Features */
+      .features {
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+
+      .chip {
+        background: #fff7f0;
+        padding: 8px 12px;
+        border-radius: 999px;
+        color: #7a4f30;
+        font-weight: 600;
+      }
+
+      /* Grid */
+      section {
+        margin-top: 28px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .room-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 40px;
+        padding: 18px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero {
+          flex-direction: column;
+        }
+
+        .hero-right {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <!-- Header with Nav -->
+      <header>
+        <div class="brand">
+          <div class="logo">S</div>
+          <div>
+            <div style="font-weight:700">Sagar Hotel & Restaurant</div>
+            <div style="font-size:13px;color:var(--muted)">
+              Comfort • Flavor • Warm Hospitality
+            </div>
+          </div>
+        </div>
+
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="rooms.html">Rooms</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+          <a class="btn" href="contact.html">Book Now</a>
+        </nav>
+      </header>
+
+      <!-- Main -->
+      <main>
+        <div class="hero">
+          <div class="hero-left">
+            <h1>Welcome to Sagar Hotel & Restaurant</h1>
+            <p class="lead">
+              A cozy stay in the heart of Babiyachaur with authentic Nepali meals and friendly service.
+              Perfect for families, travelers, and local guests looking for warm hospitality.
+            </p>
+
+            <div class="features">
+              <div class="chip">Complimentary Breakfast</div>
+              <div class="chip">In-house Restaurant</div>
+              <div class="chip">24/7 Service</div>
+              <div class="chip">Party & Dining Venue</div>
+            </div>
+
+            <section>
+              <h3>Featured Rooms</h3>
+              <div class="grid" style="margin-top:12px">
+                <div class="card">
+                  <img
+                    class="room-img"
+                    src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
+                    alt="Deluxe Room"
+                  />
+                  <h4 style="margin:10px 0 6px">Deluxe Room</h4>
+                  <div style="color:var(--muted);font-size:14px">
+                    Relax in a cozy double room overlooking the peaceful Myagdi River.
+                  </div>
+                  <div style="margin-top:8px;font-weight:700">From NPR 500 / night</div>
+                </div>
+
+                <div class="card">
+                  <img
+                    class="room-img"
+                    src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=bbb"
+                    alt="Family Room"
+                  />
+                  <h4 style="margin:10px 0 6px">Family Room</h4>
+                  <div style="color:var(--muted);font-size:14px">
+                    Spacious room, extra beds available.
+                  </div>
+                  <div style="margin-top:8px;font-weight:700">From NPR 1,000 / night</div>
+                </div>
+
+                <div class="card">
+                  <img
+                    class="room-img"
+                    src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=ccc"
+                    alt="Luxury Suite"
+                  />
+                  <h4 style="margin:10px 0 6px">Luxury Suite</h4>
+                  <div style="color:var(--muted);font-size:14px">
+                    Enjoy a private lounge area with premium comforts.
+                  </div>
+                  <div style="margin-top:8px;font-weight:700">From NPR 2,000 / night</div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="hero-right">
+            <div class="card">
+              <h3 style="margin:0 0 8px">Quick Contact</h3>
+              <p style="margin:0 0 12px;color:var(--muted);font-size:14px">
+                Address: Mangala Rural Municipality – 02, Babiyachaur, Myagdi<br />
+                Email:
+                <a href="mailto:sagarhotelrestaurant@gmail.com"
+                  >sagarhotelrestaurant@gmail.com</a
+                ><br />
+                Phone: 9849297792
+              </p>
+              <a class="btn" href="contact.html">Send Message / Book</a>
+            </div>
+
+            <div style="height:18px"></div>
+
+            <div class="card">
+              <h4 style="margin-top:0">Map</h4>
+              <div
+                style="height:160px;border-radius:8px;overflow:hidden;background:#f3efe7;display:grid;place-items:center;color:var(--muted)"
+              >
+                <a
+                  href="https://share.google/pmNh76EYBFKwLt2WJ"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Open location on Google Maps
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <section>
+          <h3>Why choose us?</h3>
+          <div
+            style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px"
+          >
+            <div class="card">
+              <strong>Authentic Meals</strong>
+              <p style="color:var(--muted);margin:6px 0 0">
+                Taste local dal-bhat, momos, and chef specials.
+              </p>
+            </div>
+
+            <div class="card">
+              <strong>Friendly Service</strong>
+              <p style="color:var(--muted);margin:6px 0 0">
+                Our staff treats guests like family.
+              </p>
+            </div>
+
+            <div class="card">
+              <strong>Convenient Location</strong>
+              <p style="color:var(--muted);margin:6px 0 0">
+                Easy access to local attractions and transport.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        © Sagar Hotel & Restaurant —
+        <span style="color:var(--muted)">
+          experience Comfort, Taste, and Tradition
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>

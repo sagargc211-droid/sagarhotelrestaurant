@@ -1,0 +1,100 @@
+<!-- FILE: contact.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Sagar Hotel & Restaurant</title>
+  <meta name="description" content="Get in touch with Sagar Hotel & Restaurant for bookings, inquiries, or any questions.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#c98b59;
+      --muted:#6b7280;
+      --bg:#fbfbfb;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#0f1724;line-height:1.6}
+    .wrap{max-width:900px;margin:0 auto;padding:28px}
+    header{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(180deg,#fff,#f5efe8);border:1px solid #efe6db;font-family:Playfair Display;font-weight:700}
+    
+    nav{display:flex;gap:16px}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+
+    main{margin-top:18px}
+    h1,h2,h3,h4{font-family:'Playfair Display', serif;margin:0 0 8px}
+    .lead{color:var(--muted)}
+    .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06);margin-top:18px}
+    form{display:flex;flex-direction:column;gap:12px}
+    input, textarea{padding:10px;border-radius:6px;border:1px solid #ccc;font-size:14px;width:100%}
+    input:focus, textarea:focus{outline:none;border-color:var(--accent)}
+    button{padding:12px;background:var(--accent);color:white;border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:0.3s}
+    button:hover{background:#b57546}
+    .contact-info{margin-top:16px;color:var(--muted);font-size:14px;line-height:1.6}
+    footer{margin-top:40px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+
+    @media(max-width:600px){
+      header{flex-direction:column;align-items:flex-start}
+      nav{flex-wrap:wrap;gap:8px;margin-top:8px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <div style="font-weight:700">Sagar Hotel & Restaurant</div>
+          <div style="font-size:13px;color:var(--muted)">Comfort • Flavor • Warm Hospitality</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn" href="contact.html">Book Now</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Contact Us</h1>
+      <p class="lead">We’d love to hear from you! Send us a message for bookings, inquiries, or feedback.</p>
+
+      <div class="card">
+        <h3>Send a Message / Booking Request</h3>
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Your Phone Number" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+          <strong>Address:</strong> Mangala Rural Municipality – 02, Babiyachaur, Myagdi<br>
+          <strong>Email:</strong> <a href="mailto:sagarhotelrestaurant@gmail.com">sagarhotelrestaurant@gmail.com</a><br>
+          <strong>Phone:</strong> 9849297792
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Our Location</h3>
+        <div style="height:250px;border-radius:8px;overflow:hidden;background:#f3efe7;display:grid;place-items:center;color:var(--muted)">
+          <a href="https://share.google/pmNh76EYBFKwLt2WJ" target="_blank" rel="noopener">Open location on Google Maps</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      © Sagar Hotel & Restaurant — <span style="color:var(--muted)">Experience Comfort, Taste, and Tradition</span>
+    </footer>
+  </div>
+</body>
+</html>

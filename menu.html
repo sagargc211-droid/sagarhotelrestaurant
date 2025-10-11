@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sagar Hotel & Restaurant — Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#c98b59;--muted:#6b7280;--bg:#fbfbfb;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#0f1724;line-height:1.6}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(180deg,#fff,#f5efe8);border:1px solid #efe6db;font-family:Playfair Display;font-weight:700}
+    nav{display:flex;gap:16px}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+    h1,h2{font-family:'Playfair Display', serif}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
+    .card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.04);text-align:center}
+    .card img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    footer{margin-top:40px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <div style="font-weight:700">Sagar Hotel & Restaurant</div>
+          <div style="font-size:13px;color:var(--muted)">Comfort • Flavor • Warm Hospitality</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn" href="contact.html">Book Now</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Our Menu</h1>
+
+      <!-- Snacks -->
+      <section class="menu-section">
+        <h2>Snacks</h2>
+        <div class="grid">
+          <div class="card">
+            <img src="images/momos.jpg" alt="Momos">
+            <h4>Momos</h4>
+            <p style="color:var(--muted);font-size:14px">Steamed or fried, served with spicy sauce.</p>
+            <div style="font-weight:700;margin-top:8px">NPR 160</div>
+          </div>
+          <div class="card">
+            <img src="images/thukpa.jpg" alt="Thukpa">
+            <h4>Thukpa / Soup</h4>
+            <p style="color:var(--muted);font-size:14px">Warm and comforting noodle or vegetable soup.</p>
+            <div style="font-weight:700;margin-top:8px">NPR 180</div>
+          </div>
+          <div class="card">
+            <img src="images/fried-snacks.jpg" alt="Fried Snacks">
+            <h4>Fried Snacks</h4>
+            <p style="color:var(--muted);font-size:14px">Samosa, pakora, and crispy treats.</p>
+            <div style="font-weight:700;margin-top:8px">NPR 100</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Course -->
+      <section class="menu-section">
+        <h2>Main Course</h2>
+        <div class="grid">
+          <div class="card">
+            <img src="images/dal-bhat.jpg" alt="Dal Bhat">
+            <h4>Dal Bhat</h4>
+            <p style="color:var(--muted);font-size:14px">Traditional Nepali meal with rice, lentils, and vegetables.</p>
+            <div style="font-weight:700;margin-top:8px">NPR 250</div>
+          </div>
+          <div class="card">
+            <img src="images/chicken-curry.jpg" alt="Chicken Curry">
+            <h4>Chicken Curry</h4>
+            <p style="color:var(--muted);font-size:14px">Spicy and flavorful, served with rice or roti.</p>
+            <div style="font-weight:700;margin-top:8px">NPR 300</div>
+          </div>
+          <div class="card">
+            <img src="images/vegetable-curry.jpg" alt="Vegetable Curry">
+            <h4>Vegetable Curry</h4>
+            <p style="color:var(--muted);font-size:14px">Seasonal vegetables cooked with authentic spices.</p>
+            <div style="font-weight:700;margin-top:8px">NPR 250</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Drinks -->
+      <section class="menu-section">
+        <h2>Drinks</h2>
+        <div class="grid">
+          <div class="card">
+            <img src="images/tea.jpg" alt="Tea / Coffee">
+            <h4>Tea / Coffee</h4>
+            <p style="color:var(--muted);font-size:14px">Hot beverages to warm your day.</p>
+            <div style="font-weight:700;margin-top:8px">NPR 30</div>
+          </div>
+          <div class="card">
+            <img src="images/fresh-juice.jpg" alt="Fresh Juice">
+            <h4>Fresh Juice</h4>
+            <p style="color:var(--muted);font-size:14px">Seasonal fruits, freshly blended.</p>
+            <div style="font-weight:700;margin-top:8px">NPR 120</div>
+          </div>
+          <div class="card">
+            <img src="images/soft-drinks.jpg" alt="Soft Drinks">
+            <h4>Soft Drinks</h4>
+            <p style="color:var(--muted);font-size:14px">Cool and refreshing soda drinks.</p>
+            <div style="font-weight:700;margin-top:8px">NPR 100</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © Sagar Hotel & Restaurant — <span style="color:var(--muted)">Experience Comfort, Taste, and Tradition</span>
+    </footer>
+  </div>
+</body>
+</html>

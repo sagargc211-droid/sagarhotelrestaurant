@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — Sagar Hotel & Restaurant</title>
+  <meta name="description" content="Explore the gallery of Sagar Hotel & Restaurant, featuring cozy rooms, our restaurant, and beautiful surroundings.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#c98b59;
+      --muted:#6b7280;
+      --bg:#fbfbfb;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#0f1724;line-height:1.6}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(180deg,#fff,#f5efe8);border:1px solid #efe6db;font-family:Playfair Display;font-weight:700}
+    nav{display:flex;gap:16px}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+    main{margin-top:18px}
+    h1,h2,h3,h4{font-family:'Playfair Display', serif;margin:0 0 8px}
+    .lead{color:var(--muted)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;transition:0.3s;cursor:pointer;}
+    .gallery-grid img:hover{transform:scale(1.05);}
+    footer{margin-top:40px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+
+    @media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.gallery-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Header with consistent nav -->
+    <header>
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <div style="font-weight:700">Sagar Hotel & Restaurant</div>
+          <div style="font-size:13px;color:var(--muted)">Comfort • Flavor • Warm Hospitality</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn" href="contact.html">Book Now</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Gallery</h1>
+      <p class="lead">Take a look at our cozy rooms, dining area, and the beautiful surroundings of Sagar Hotel & Restaurant.</p>
+
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" alt="Deluxe Room">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80" alt="Family Room">
+        <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1200&q=80" alt="Luxury Suite">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80" alt="Restaurant">
+        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" alt="Lobby">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Surroundings">
+      </div>
+    </main>
+
+    <footer>
+      © Sagar Hotel & Restaurant — <span style="color:var(--muted)">experience Comfort, Taste, and Tradition</span>
+    </footer>
+  </div>
+</body>
+</html>
