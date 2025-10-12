@@ -1,4 +1,3 @@
-<!-- FILE: contact.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,8 +21,10 @@
     .logo{width:56px;height:56px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(180deg,#fff,#f5efe8);border:1px solid #efe6db;font-family:Playfair Display;font-weight:700}
     
     nav{display:flex;gap:16px}
-    nav a{color:var(--muted);text-decoration:none;font-weight:600}
-    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;transition:0.3s}
+    nav a:hover{color:var(--accent);}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;transition:0.3s}
+    .btn:hover{background:#b57546}
 
     main{margin-top:18px}
     h1,h2,h3,h4{font-family:'Playfair Display', serif;margin:0 0 8px}
@@ -31,9 +32,9 @@
     .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06);margin-top:18px}
     form{display:flex;flex-direction:column;gap:12px}
     input, textarea{padding:10px;border-radius:6px;border:1px solid #ccc;font-size:14px;width:100%}
-    input:focus, textarea:focus{outline:none;border-color:var(--accent)}
-    button{padding:12px;background:var(--accent);color:white;border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:0.3s}
-    button:hover{background:#b57546}
+    input:focus, textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 8px rgba(201,139,89,0.4)}
+    button{padding:12px;background:var(--accent);color:white;border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:0.3s, box-shadow 0.3s}
+    button:hover{background:#b57546;box-shadow:0 0 12px rgba(201,139,89,0.6)}
     .contact-info{margin-top:16px;color:var(--muted);font-size:14px;line-height:1.6}
     footer{margin-top:40px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
 
@@ -67,15 +68,23 @@
       <h1>Contact Us</h1>
       <p class="lead">We’d love to hear from you! Send us a message for bookings, inquiries, or feedback.</p>
 
+      <!-- Web3Forms Card -->
       <div class="card">
         <h3>Send a Message / Booking Request</h3>
-        <form action="#" method="post">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+          <input type="hidden" name="subject" value="Booking Request — Sagar Hotel & Restaurant" />
+          <input type="hidden" name="from_name" value="Sagar Hotel & Restaurant" />
+          <input type="hidden" name="email_to" value="sagarhotelrestaurant@gmail.com" />
+
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
           <input type="tel" name="phone" placeholder="Your Phone Number" required>
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <textarea name="message" rows="5" placeholder="Your Message" required>I want to book</textarea>
           <button type="submit">Send Message</button>
         </form>
+
+        <div id="result" class="contact-info"></div>
 
         <div class="contact-info">
           <strong>Address:</strong> Mangala Rural Municipality – 02, Babiyachaur, Myagdi<br>
@@ -84,6 +93,7 @@
         </div>
       </div>
 
+      <!-- Location Card -->
       <div class="card">
         <h3>Our Location</h3>
         <div style="height:250px;border-radius:8px;overflow:hidden;background:#f3efe7;display:grid;place-items:center;color:var(--muted)">
@@ -96,5 +106,64 @@
       © Sagar Hotel & Restaurant — <span style="color:var(--muted)">Experience Comfort, Taste, and Tradition</span>
     </footer>
   </div>
+
+  <script>
+    (function(){
+      const form = document.getElementById('contactForm');
+      const result = document.getElementById('result');
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        // Clear previous message
+        result.textContent = '';
+        result.style.color = 'var(--muted)';
+
+        // Grab field values
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const phone = form.phone.value.trim();
+        const message = form.message.value.trim();
+
+        // Simple validation
+        if(!name || !email || !phone || !message){
+          result.style.color = '#dc2626';
+          result.textContent = '❌ Please fill out all fields before sending.';
+          return;
+        }
+
+        // Optional: simple email format check
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if(!emailPattern.test(email)){
+          result.style.color = '#dc2626';
+          result.textContent = '❌ Please enter a valid email address.';
+          return;
+        }
+
+        // Sending message
+        result.style.color = 'var(--muted)';
+        result.textContent = 'Sending…';
+
+        const data = new FormData(form);
+        fetch(form.action, { method:'POST', body:data })
+          .then(res => res.json())
+          .then(json => {
+            if(json.success){
+              result.style.color = '#22c55e';
+              result.textContent = '✅ Thank you — your booking request was sent. We will contact you soon.';
+              form.reset();
+            } else {
+              result.style.color = '#dc2626';
+              result.textContent = json.message || '❌ Something went wrong. Please try again later.';
+            }
+          })
+          .catch(err => {
+            result.style.color = '#dc2626';
+            result.textContent = '❌ Network error. Please try again.';
+            console.error('Web3Forms error:', err);
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
